@@ -1,19 +1,6 @@
-body {
-  font-family: Arial, sans-serif;
-  padding: 2rem;
-}
-
-.cassette-controls {
-  display: flex;
-  gap: 1rem;
-  background-color: white;
-  padding: 1rem;
-  border: 4px solid black;
-  border-radius: 12px;
-  width: fit-content;
-  margin-bottom: 2rem;
-}
-
+/* ============================================
+   GLOBAL BUTTON STYLING (applies to all)
+============================================ */
 .btn {
   width: 60px;
   height: 60px;
@@ -25,16 +12,53 @@ body {
   cursor: pointer;
 }
 
-/* Record (Home) */
+/* ============================================
+   CASSETTE NAVBAR CONTAINER
+============================================ */
+.cassette-controls {
+  display: flex;
+  flex-direction: row; /* Force horizontal layout */
+  gap: 1rem;
+  background-color: white;
+  padding: 1rem;
+  border: 4px solid black;
+  border-radius: 12px;
+  width: fit-content;
+  margin-bottom: 2rem;
+}
+
+/* ============================================
+   INDIVIDUAL BUTTON STYLES (Icons)
+============================================ */
+
+/* ⏺ RECORD BUTTON (Home) - Red */
 .btn.record::before {
   content: "";
   width: 24px;
   height: 24px;
-  background-color: red;
+  background-color: #ff0000;
   border-radius: 50%;
 }
 
-/* Play (Features) */
+/* ⏪ REWIND BUTTON (Archive) - Red */
+.btn.rewind {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+}
+.btn.rewind::before,
+.btn.rewind::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-right: 14px solid #ff0000;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+}
+
+/* ▶️ PLAY BUTTON (Features) - Black */
 .btn.play::before {
   content: "";
   width: 0;
@@ -44,7 +68,7 @@ body {
   border-bottom: 12px solid transparent;
 }
 
-/* Pause (About) */
+/* ⏸ PAUSE BUTTON (About) - Black */
 .btn.pause .bar {
   width: 8px;
   height: 28px;
@@ -53,34 +77,28 @@ body {
   margin: 0 2px;
 }
 
-/* Stop (Contact) */
+/* ⏩ FAST FORWARD BUTTON (What’s Next) - Red */
+.btn.forward {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+}
+.btn.forward::before,
+.btn.forward::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 14px solid #ff0000;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+}
+
+/* ⏹ STOP BUTTON (Contact) - Black */
 .btn.stop::before {
   content: "";
   width: 24px;
   height: 24px;
   background-color: black;
-}
-
-/* Rewind (Archive) */
-.btn.rewind::before {
-  content: "";
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border-right: 10px solid black;
-  border-top: 12px solid transparent;
-  border-bottom: 12px solid transparent;
-  box-shadow: -12px 0 0 0 black;
-}
-
-/* Fast Forward (What’s Next) */
-.btn.forward::before {
-  content: "";
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border-left: 10px solid black;
-  border-top: 12px solid transparent;
-  border-bottom: 12px solid transparent;
-  box-shadow: 12px 0 0 0 black;
 }
